@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roshan Naik - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem 3rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+    h1, h2 {
+      color: #1a237e;
+    }
+    .contact {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .section {
+      margin-top: 2.5rem;
+    }
+    .section ul {
+      padding-left: 1.2rem;
+    }
+    .section li {
+      margin-bottom: 0.7rem;
+      line-height: 1.6;
+    }
+    .title {
+      font-weight: 600;
+      margin-top: 1.2rem;
+      font-size: 1.05rem;
+    }
+    a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Roshan Naik</h1>
+    <p class="contact">
+      Pune, India<br>
+      <a href="mailto:roshan@example.com">roshan@example.com</a> |
+      <a href="https://github.com/roshan-naik">GitHub</a> |
+      <a href="https://linkedin.com/in/roshan-naik">LinkedIn</a>
+    </p>
+
+    <div class="section">
+      <h2>Summary</h2>
+      <p id="summary-text">Loading summary...</p>
+    </div>
+
+    <div class="section">
+      <h2>Technical Competencies</h2>
+      <ul>
+        <li><strong>Automation:</strong> Jenkins, Ansible, Git, GitLab, Docker</li>
+        <li><strong>WebServer:</strong> Apache, HAProxy</li>
+        <li><strong>Languages:</strong> C, C++, Python, Bash</li>
+        <li><strong>OS:</strong> Windows, Linux (RedHat)</li>
+        <li><strong>Databases:</strong> Oracle, MySQL</li>
+        <li><strong>Tools:</strong> Prometheus, MQL, 3DEXPERIENCE, AWS</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <p class="title">Infrastructure Consultant | Dassault Systèmes Global Services (DSGS) | Dec 2021 – Present</p>
+      <ul>
+        <li>Automated and managed infrastructure on private cloud (PCOP) and on-prem platforms using Ansible, Shell, and Jenkins.</li>
+        <li>Installed and maintained 3DEXPERIENCE Platform versions R2022x and R2024x with full dependency stack (Java, TomEE, Oracle DB).</li>
+        <li>Built Ansible roles for platform configuration, reducing manual rework and increasing repeatability.</li>
+        <li>Deployed HAProxy and Apache for load balancing across 100+ environments on 15+ servers.</li>
+        <li>Led upgrade cycles from R2020x to R2024x while ensuring minimal downtime.</li>
+        <li>Handled PCOP refreshes and critical migrations with high availability goals.</li>
+        <li>Introduced proactive monitoring with Grafana + Prometheus, improving incident response.</li>
+        <li>Versioned code and managed rollbacks using Git/GitLab, aligned with DevOps best practices.</li>
+        <li>Collaborated with R&D on high-priority SRs to push critical hotfixes and improvements.</li>
+      </ul>
+
+      <p class="title">Client: Screen Upgrade Assessment</p>
+      <ul>
+        <li>Provisioned 2013x and 2021x servers for release upgrade testing and validation.</li>
+        <li>Provided backend support for upgrade execution team.</li>
+      </ul>
+
+      <p class="title">Client: DS Internal Support</p>
+      <ul>
+        <li>Resolved platform support tickets and Oracle DB configuration issues.</li>
+        <li>Maintained internal infra to meet SLA-based timelines.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Goa University:</strong> B.E. in Mechanical Engineering – 78% (Distinction)</li>
+        <li><strong>Goa Board HSSC:</strong> Science – 84% (Distinction)</li>
+        <li><strong>Goa Board SSC:</strong> 10th – 90% (Distinction)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Conversion of Waste Plastic to Energy</strong> – Selected among top 15 ideas at Middle East and Africa’s (MEA) Innovation Hub.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Volunteer / Extracurricular Activities</h2>
+      <ul>
+        <li><strong>BHP Robotics (Jan 2001 – Present):</strong> Former CTO and mentor for national/international robotics competitions. Ongoing contributions in CAD design and mentorship.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        const summaryText = `Currently working as an Infrastructure Consultant with ${data.experience} years of experience in the PLM domain. I thrive in environments where I can apply my skills to help achieve business success while continuously learning and growing in the latest technologies.`;
+        document.getElementById('summary-text').textContent = summaryText;
+      })
+      .catch(error => {
+        console.error("Could not load experience data:", error);
+        document.getElementById('summary-text').textContent = "Experience data could not be loaded.";
+      });
+  </script>
+</body>
+</html>
